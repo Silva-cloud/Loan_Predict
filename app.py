@@ -27,4 +27,4 @@ def predict():
         'Naive Bayes model says {}'.format(NB_prediction))
 
 if __name__ == '__main__':
-    # app.run(debug=True)
+    app.run(debug=True)
