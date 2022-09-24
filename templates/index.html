@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>loan_Prediction</title>
+</head>
+<body style="background:#000;">
+	<div class="log">
+		<h1 style="color:purple;">Loan Prediction</h1>
+		<form action="{{ url_for('predict')}}" method="post">
+			<input type="text" name="Gender">
+			<input type="text" name="Married">
+			<input type="text" name="Dependents">
+			<input type="text" name="Education">
+			<input type="text" name="Self_Employed">
+			<input type="text" name="ApplicantIncome">
+			<input type="text" name="CoapplicantIncome">
+			<input type="text" name="LoanAmount">
+			<input type="text" name="Loan_Amount_Term">
+			<input type="text" name="Credit_History">
+			<br>
+			<br>
+			<input type="submit" class="btn btn-primary btn-block btn-large" value="Predict>>">
+
+		</form>
+		<br>
+		<br>
+		<h2 style="color:violet;">
+			{{prediction_text}}
+		</h2>
+	</div>
+</body>
+</html>
