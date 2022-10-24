@@ -5,20 +5,46 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>loan_Prediction</title>
 </head>
-<body style="background:#000;">
+<body style="background:#000; color: white;">
 	<div class="log">
-		<h1 style="color:purple;">Loan Prediction</h1>
+		<h1 style="color:violet;">Loan Prediction</h1>
 		<form action="{{ url_for('predict')}}" method="post">
-			<input type="text" name="Gender">
-			<input type="text" name="Married">
-			<input type="text" name="Dependents">
-			<input type="text" name="Education">
-			<input type="text" name="Self_Employed">
-			<input type="text" name="ApplicantIncome">
-			<input type="text" name="CoapplicantIncome">
-			<input type="text" name="LoanAmount">
-			<input type="text" name="Loan_Amount_Term">
-			<input type="text" name="Credit_History">
+			Gender:
+			<input type="radio" name="Gender" value="1" required>Male
+			<input type="radio" name="Gender" value="0" required>Female
+			<br><br>
+			Married:
+			<input type="radio" name="Married" value="1" required>Yes
+			<input type="radio" name="Married" value="0" required>No
+			<br><br>
+			Dependents:
+			<input type="radio" name="Dependents" value="1" required> 1
+			<input type="radio" name="Dependents" value="2" required> 2
+			<input type="radio" name="Dependents" value="3" required> +3
+			<br><br>
+			Education:
+			<input type="radio" name="Education" value="1" required> Graduate
+			<input type="radio" name="Education" value="0" required> Not Graduate
+			<br><br>
+			Self_Employed:
+			<input type="radio" name="Self_Employed" value="1" required> Yes
+			<input type="radio" name="Self_Employed" value="0" required> No
+			<br><br>
+			ApplicantIncome:
+			<input type="text" name="ApplicantIncome" required>
+			<br><br>
+			CoapplicantIncome:
+			<input type="text" name="CoapplicantIncome" required>
+			<br><br>
+			LoanAmount:
+			<input type="text" name="LoanAmount" required>
+			<br><br>
+			Loan_Amount_Term:
+			<input type="text" name="Loan_Amount_Term" required>
+			<br><br>
+			Credit_History:
+			<input type="radio" name="Credit_History" value="1" required> Yes
+			<input type="radio" name="Credit_History" value="0" required> No
 			<br>
 			<br>
 			<input type="submit" class="btn btn-primary btn-block btn-large" value="Predict>>">
@@ -26,9 +52,17 @@
 		</form>
 		<br>
 		<br>
-		<h2 style="color:violet;">
-			{{prediction_text}}
-		</h2>
+		<div style="border:2px solid violet; padding:2em; position: absolute; top: 2em; right:2em;">
+			<h2 style="color:violet;" dir="rtl">
+				{{Logistic_Regression_result}}
+			</h2>
+			<h2 style="color:violet;" dir="rtl">
+				{{Decision_Tree_result}}
+			</h2>
+			<h2 style="color:violet;" dir="rtl">
+				{{Naive_Bias_result}}
+			</h2>
+		</div>
 	</div>
 </body>
 </html>
